@@ -1,3 +1,5 @@
+# Sam Griesemer 04/15/17
+
 import torch
 import torchvision.transforms as transforms
 import torch.nn as nn
