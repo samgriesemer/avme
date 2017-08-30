@@ -1,3 +1,6 @@
+import torch
+import torch.nn as nn
+
 class AME(nn.Module):
     def __init__(self, ninp1, nhid1, ninp2, nhid2):
         super(AME, self).__init__()
