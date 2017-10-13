@@ -8,12 +8,13 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torchvision
 
-from models import AME, VAE
+from models.ame import AME
+from models.vae import VAE
 
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
+#%matplotlib inline
 
 # initialize hyperparams
 lr = 1.0
