@@ -32,12 +32,10 @@ epochs = 21
 transform=transforms.Compose([transforms.ToTensor()
                              ])
 trainset = torchvision.datasets.MNIST(root='./data', train=True, download=True, transform=transform)
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=bsz, 
-                                          shuffle=True, num_workers=2)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=bsz, shuffle=True, num_workers=2)
 
 testset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=transform)
-testloader = torch.utils.data.DataLoader(testset, batch_size=bsz, 
-                                          shuffle=False, num_workers=2)
+testloader = torch.utils.data.DataLoader(testset, batch_size=bsz, shuffle=False, num_workers=2)
 
 data_list = []
 onehot_labels = []
