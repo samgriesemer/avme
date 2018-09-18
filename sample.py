@@ -34,7 +34,7 @@ with open('pretrained_networks/avme_enc.pt', 'rb') as f:
     ame_enc_v = torch.load(f)
     
 # lists for output series
-canvas_list_1 = []
+canvas_list = []
 
 # initialize canvas
 canvas = Variable(torch.zeros(bsz,784))
@@ -49,9 +49,9 @@ for i in range(12):
     sample = Variable(torch.randn(bsz,latent_size))
     output, h_dec_1, h_dec_2 = ame_dec_v(sample, h_dec_1, h_dec_2)
     canvas = canvas.add(output)
-    canvas_list_1.append(canvas.sigmoid().view(bsz,1,28,28).data[:1])
+    canvas_list.append(canvas.sigmoid().view(bsz,1,28,28).data[:1])
 
 # matplotlib series plot
-pic = torch.cat(canvas_list_1,3)
+pic = torch.cat(canvas_list,3)
 plt.figure(figsize=(20,10))
 imshow(torchvision.utils.make_grid(pic))
